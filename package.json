@@ -1,0 +1,21 @@
+{
+  "name": "axelar-documentation",
+  "version": "0.1.0",
+  "description": "A brand new documentation site for Axelar",
+  "main": "eleventy.config.js",
+  "scripts": {
+    "dev": "eleventy --serve --incremental --quiet",
+    "start": "eleventy --serve --incremental --quiet",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.25",
+    "slinkity": "^1.0.0-canary.0",
+    "sass": "^1.57.1",
+    "@slinkity/react": "^1.0.0"
+  }
+}
