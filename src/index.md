@@ -1,6 +1,6 @@
 ---
 title: Axelar Documentation
-layout: layout
+layout: main
 ---
 
 # What is Axelar?
@@ -18,9 +18,9 @@ Learn how to run a node on the Axelar network
 ## Validator
 Axelar validators facilitate cross-chain connections
 
-
-
 {% island "theme-chooser.tsx", "client:load" %}{% endisland %}
+
+
 
 
 -----------------------------

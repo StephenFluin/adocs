@@ -6,7 +6,7 @@ export const island = {
 };
 export const frontmatter = {
   title: 'React to this',
-  layout: 'layout',
+  layout: 'main',
 };
 
 export default function ReactDemo() {

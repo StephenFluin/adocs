@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/png" href="/images/favicon.png"/>
+    {% if title %}
+      <title>{{title}} | Axelar Documentation</title>
+    {% else %}
+      <title>Axelar Documentation</title>
+    {% endif %}
+    <meta content="{{title}} | Axelar Documentation" property="og:title">
+    <meta content="{{title}} | Axelar Documentation" property="twitter:title">
+
+    <meta content="{{metadata.description}}" name="description">
+    <meta content="{{metadata.description}}" property="og:description">
+    <meta content="{{metadata.description}}" property="twitter:description">
+    {% if metadata.image %}
+      <meta content="{{metadata.image}}" property="og:image">
+      <meta content="{{metadata.image}}" property="twitter:image">
+    {% endif %}
+
+    <meta content="website" property="og:type">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    {% if hidden %}
+      <!-- Allow hidden content -->
+      <meta content="noindex" name="robots"/>
+    {% endif %}
+    <link rel="stylesheet" href="/@root/styles/index.scss">
+  </head>
+  <body>
+    <nav>
+      <a href="/">Axelar Documentation</a>
+      <a href="/developers">Developers</a>
+      <a href="/node-operators">Node Operators</a>
+      <a href="/validators">Validators</a>
+    </nav>
+    <main>
+      <h1>{{ title }}</h1>
+
+      {{ content | safe }}
+    </main>
+  </body>
+</html>

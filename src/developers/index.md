@@ -1,5 +1,6 @@
 ---
-title: Axelar Developer Documentation
-layout: layout
+title: Developers
+layout: section
+section: developers
 ---
 Wohoo,devs!

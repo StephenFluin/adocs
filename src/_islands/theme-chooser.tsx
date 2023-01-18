@@ -1,41 +1,37 @@
-import React from 'react';
-import { useMounted } from '../_includes/use-mounted';
-import { useTheme } from 'next-themes';
-type ThemeSwitchProps = {
-  lite?: boolean;
-};
+import React from "react";
+import { useEffect } from "react";
 
-const OPTIONS = [
-  { key: "light", name: "Light" },
-  { key: "dark", name: "Dark" },
-  { key: "system", name: "System" },
-];
+export default function ThemeSwitcher() {
+  useEffect(() => {
+    console.log("this is being run");
+    if (typeof window === "undefined") return;
+    // This is a hack to access global state and local storage easily
+    const themes = ["System", "Light", "Dark"];
+    const themeClasses = themes.map((theme) => theme.toLowerCase());
+    let current = themes.indexOf(localStorage.getItem("theme") || "System");
+    const switcher = document.getElementById("themeSwitcher");
 
-export default function ThemeSwitch({ lite }) {
-  const { setTheme, resolvedTheme, theme = "" } = useTheme();
-  const mounted = useMounted();
-  const WordTouse = mounted && resolvedTheme === "dark" ? 'Dark' : 'Light';
-  return (
-    // <Select
-    //     title="Change theme"
-    //     options={OPTIONS}
-    //     onChange={(option) => {
-    //       setTheme(option.key);
-    //     }}
-    //     selected={{
-    //       key: theme,
-    //       name: (
-    //         <div className="nx-flex nx-items-center nx-gap-2 nx-capitalize">
-    //           {WordTouse}
-    //           <span className={lite ? "md:nx-hidden" : ""}>
-    //             {mounted ? theme : "light"}
-    //           </span>
-    //         </div>
-    //       ),
-    //     }}
-    //   /> 
-    <div></div>
-  );
+    if (switcher) {
+      // Update the button and the classList
+      const setTheme = (theme: number) => {
+        document.body.classList.remove(
+          themeClasses[(theme + 1) % themes.length],
+          themeClasses[(theme + 2) % themes.length]
+        );
+        document.body.classList.add(themeClasses[theme]);
+        switcher.innerHTML = themes[theme];
+      };
+
+      setTheme(current);
+
+      switcher?.addEventListener("click", () => {
+        let next = (current + 1) % themes.length;
+        // Persist accross loads
+        localStorage.setItem("theme", themes[next]);
+        setTheme(next);
+        current = next;
+      });
+    }
+  });
+  return <div id="themeSwitcher"></div>;
 }
-
-
