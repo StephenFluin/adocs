@@ -3,6 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-size: 16px;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  line-height:28px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: grey;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
 nav {
   height:64px;
   display:flex;
@@ -10,19 +32,41 @@ nav {
 }
 nav a {
   margin:16px;
+  text-decoration:none;
+  color:black;
 }
+
 main {
   margin:16px;
 }
 #page {
   display:flex;
 }
-.nav-header {
-  display:block;
+.mainBody {
+  flex:1;
 }
 .sideNav {
   width:300px;
 }
 .sideNav a {
   display:block;
+}
+.nav-header {
+  display:block;
+  font-weight:bold;
+}
+.sideNav div a:nth-child(1n+1) {
+  margin-left:16px;
+}
+
+.active {
+  color:blue;
+  text-decoration:underline;
+}
+.feedback svg {
+  height:24px;
+  width:24px;
+}
+.feedback svg:hover {
+  color:blue;
 }

@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 // Use the `/@root/` alias to import resources from your project root.
 // See our "import alias" docs for more:
 // https://slinkity.dev/docs/import-aliases/
-import '/@root/styles/slinky.scss'
+import "/@root/styles/slinky.scss";
 
 export default function SpinningLogo() {
-  const [slinkDirection, setSlinkDirection] = React.useState('left')
+  const [slinkDirection, setSlinkDirection] = React.useState("left");
 
   function toggleSlinkDirection() {
-    if (slinkDirection === 'left') {
-      setSlinkDirection('right')
+    if (slinkDirection === "left") {
+      setSlinkDirection("right");
     } else {
-      setSlinkDirection('left')
+      setSlinkDirection("left");
     }
   }
 
@@ -68,8 +68,10 @@ export default function SpinningLogo() {
         </defs>
       </svg>
       <button className="slinky__button" onClick={toggleSlinkDirection}>
-        {slinkDirection === 'left' ? 'Move slinky right 👉' : 'Move slinky left 👈'}
+        {slinkDirection === "left"
+          ? "Move slinky right 👉"
+          : "Move slinky left 👈"}
       </button>
     </section>
-  )
+  );
 }

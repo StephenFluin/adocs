@@ -28,4 +28,10 @@ module.exports = {
       contents: [],
     },
   ],
+  validators: [
+    {
+      section: "Validators",
+      contents: [],
+    },
+  ],
 };

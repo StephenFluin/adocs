@@ -25,11 +25,12 @@ layout: main
         {% endfor %}
     </div>
     <div class="mainBody">
+        <h1>{{title}}</h1>
+        <div style="display:flex;justify-content:space-between;">
+            <a href="https://github.com/axelarnetwork/documentation/edit/main/{{page.inputPath}}">Suggest Edits</a>
+            {% island "feedback.tsx", "client:load" %}{% endisland %}
+        </div>
+        {{ content | safe }}
 
-    Here's the {{section}} content you're looking for:
-{{ content | safe }}
-
-Wow, wasn't that great?
-
-</div>
+    </div>
 </div>
