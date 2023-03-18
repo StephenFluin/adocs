@@ -25,12 +25,12 @@ layout: main
         {% endfor %}
     </div>
     <div class="mainBody">
-        <h1>{{title}}</h1>
+        <h1 data-pagefind-body>{{title}}</h1>
         <div style="display:flex;justify-content:space-between;">
-            <a href="https://github.com/axelarnetwork/documentation/edit/main/{{page.inputPath}}">Suggest Edits</a>
-            {% island "feedback.tsx", "client:load" %}{% endisland %}
+            {# <a href="https://github.com/axelarnetwork/documentation/edit/main/{{page.inputPath}}">Suggest Edits</a> #}
+            {# {% island "feedback.tsx", "client:load" %}{% endisland %} #}
         </div>
-        {{ content | safe }}
+        <article data-pagefind-body>{{ content | safe }}</article>
 
     </div>
 </div>

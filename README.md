@@ -1,14 +1,14 @@
 ## Dev Server
 
 ```bash
-npm i
-npm run dev
+yarn
+yarn dev
 ```
 
 ## Build for production
 
 ```bash
-npm run build
+yarn build
 firebase deploy
 ```
 
@@ -16,4 +16,4 @@ This runs the `slinkity` command to kick off a 2 step build process:
 - Use 11ty to build your routes and copy over static assets
 - Use Vite to bundle, minify, and optimize your styles and JS resources
 
-Your new site will appear in the `_site` folder, or [wherever you tell 11ty to build your site](https://www.11ty.dev/docs/config/#output-directory).
+Your new site will appear in the `dist` folder.

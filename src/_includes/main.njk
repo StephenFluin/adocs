@@ -12,10 +12,11 @@
     {% endif %}
     <meta content="{{title}} | Axelar Documentation" property="og:title">
     <meta content="{{title}} | Axelar Documentation" property="twitter:title">
-
+  {% if metadata.description %}
     <meta content="{{metadata.description}}" name="description">
     <meta content="{{metadata.description}}" property="og:description">
     <meta content="{{metadata.description}}" property="twitter:description">
+    {% endif %}
     {% if metadata.image %}
       <meta content="{{metadata.image}}" property="og:image">
       <meta content="{{metadata.image}}" property="twitter:image">
@@ -29,7 +30,7 @@
       <!-- Allow hidden content -->
       <meta content="noindex" name="robots"/>
     {% endif %}
-    <link rel="stylesheet" href="/@root/styles/index.scss">
+    <link rel="stylesheet" href="/@root/styles/main.scss">
   </head>
   <body>
     <nav style="display:flex;">

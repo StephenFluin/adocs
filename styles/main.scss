@@ -15,6 +15,9 @@ a {
 a:hover {
   color: grey;
 }
+article a, article a:hover {
+  color:blue;
+}
 h1 {
   font-size: 2rem;
   font-weight: 700;
